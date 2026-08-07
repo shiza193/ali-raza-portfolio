@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Raza | Mobile App Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  :root{
+    --black:#0A0908;
+    --black-soft:#121009;
+    --card:#15130E;
+    --card-line: rgba(212,175,55,0.14);
+    --gold:#D4AF37;
+    --gold-shine:#F4E4B0;
+    --gold-deep:#8A6A1F;
+    --ivory:#F3EEE2;
+    --muted:#948B77;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black);
+    color:var(--ivory);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* ===== Signature gold-shimmer text ===== */
+  .shine{
+    background:linear-gradient(110deg, var(--gold-deep) 20%, var(--gold-shine) 45%, var(--gold) 55%, var(--gold-deep) 80%);
+    background-size:250% 100%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation:shimmer 5s linear infinite;
+  }
+  @keyframes shimmer{
+    0%{background-position:0% 50%;}
+    100%{background-position:250% 50%;}
+  }
+
+  /* ===== Thin circuit-line background texture ===== */
+  .circuit-bg{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:.35;
+    background-image:
+      linear-gradient(rgba(212,175,55,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,175,55,0.05) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(circle at 50% 20%, black, transparent 70%);
+  }
+
+  .grain{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  section, header, footer{position:relative;z-index:1;}
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;
+    top:0;left:0;width:100%;
+    z-index:1000;
+    padding:22px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:all .35s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(10,9,8,0.85);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--card-line);
+    padding:14px 6%;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:18px;
+    letter-spacing:1px;
+    color:var(--ivory);
+  }
+  .logo span{color:var(--gold);}
+
+  nav ul{display:flex;list-style:none;gap:6px;}
+  nav ul li a{
+    text-decoration:none;
+    color:var(--muted);
+    font-size:12.5px;
+    font-weight:500;
+    letter-spacing:.4px;
+    padding:8px 16px;
+    border-radius:2px;
+    transition:all .3s ease;
+  }
+  nav ul li a:hover, nav ul li a.active{color:var(--gold-shine);}
+
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .hamburger span{width:24px;height:1.5px;background:var(--gold);}
+
+  /* ===== Hero ===== */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    padding:120px 6% 60px;
+  }
+  .hero-text{flex:1;max-width:620px;}
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11.5px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--card-line);
+    padding:8px 18px;
+    border-radius:2px;
+    margin-bottom:28px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:6px;height:6px;
+    background:var(--gold);
+    box-shadow:0 0 8px var(--gold);
+  }
+
+  .hero-text h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(38px,5.2vw,64px);
+    line-height:1.08;
+    margin-bottom:18px;
+    color:var(--ivory);
+  }
+
+  .hero-text .role{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(15px,2vw,19px);
+    font-weight:500;
+    letter-spacing:.5px;
+    margin-bottom:26px;
+  }
+
+  .hero-text p{
+    color:var(--muted);
+    font-size:14.5px;
+    line-height:1.9;
+    max-width:480px;
+    margin-bottom:36px;
+  }
+
+  .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;}
+
+  .btn-gold{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    background:linear-gradient(135deg, var(--gold-deep), var(--gold));
+    color:#100D06;
+    padding:14px 30px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    border-radius:2px;
+    transition:all .3s ease;
+    box-shadow:0 0 0 rgba(212,175,55,0);
+  }
+  .btn-gold:hover{
+    box-shadow:0 8px 30px rgba(212,175,55,0.25);
+    transform:translateY(-2px);
+  }
+
+  .btn-outline{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    background:transparent;
+    color:var(--ivory);
+    border:1px solid var(--card-line);
+    padding:14px 30px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    border-radius:2px;
+    transition:all .3s ease;
+  }
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold-shine);}
+
+  .hero-stats{display:flex;gap:44px;margin-top:56px;}
+  .stat h3{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--gold-shine);}
+  .stat p{font-size:11.5px;color:var(--muted);letter-spacing:.4px;margin-top:2px;}
+
+  /* ===== Signature: glowing gold app-icon mark ===== */
+  .hero-mark{
+    flex:0 0 320px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .icon-frame{
+    width:280px;height:280px;
+    border-radius:64px;
+    border:1px solid var(--card-line);
+    background:linear-gradient(160deg, rgba(212,175,55,0.05), rgba(212,175,55,0.01));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    animation:float-icon 6s ease-in-out infinite;
+  }
+  .icon-frame::before{
+    content:'';
+    position:absolute;
+    inset:-1px;
+    border-radius:64px;
+    padding:1px;
+    background:linear-gradient(135deg, var(--gold), transparent 40%, transparent 60%, var(--gold));
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    opacity:.6;
+  }
+  .icon-frame i{
+    font-size:78px;
+    color:var(--gold);
+    filter:drop-shadow(0 0 25px rgba(212,175,55,0.35));
+  }
+  @keyframes float-icon{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-14px);}
+  }
+
+  /* ===== Section shell ===== */
+  section{
+    padding:110px 6%;
+    max-width:1240px;
+    margin:0 auto;
+  }
+  .label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-bottom:16px;
+  }
+  .label::before{content:'';width:26px;height:1px;background:var(--gold);}
+
+  .title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(26px,3.4vw,40px);
+    margin-bottom:50px;
+    line-height:1.2;
+  }
+
+  /* ===== About ===== */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:60px;
+    align-items:start;
+  }
+  .about-frame{
+    aspect-ratio:3/4;
+    border:1px solid var(--card-line);
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(160deg, rgba(212,175,55,0.05), transparent);
+    color:var(--gold-deep);
+    font-size:13px;
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:1px;
+  }
+  .about-text p{color:var(--muted);line-height:1.9;font-size:14.5px;margin-bottom:18px;}
+  .about-details{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin:24px 0 30px;
+  }
+  .detail{display:flex;gap:10px;align-items:center;font-size:13px;}
+  .detail i{color:var(--gold);width:16px;}
+  .detail strong{color:var(--ivory);font-weight:500;}
+  .detail span{color:var(--muted);}
+
+  /* ===== Skills ===== */
+  .skills-section{
+    background:var(--black-soft);
+    border-top:1px solid var(--card-line);
+    border-bottom:1px solid var(--card-line);
+  }
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:1px;
+    background:var(--card-line);
+    border:1px solid var(--card-line);
+  }
+  .skill-card{
+    background:var(--black-soft);
+    padding:34px 28px;
+    transition:background .3s ease;
+  }
+  .skill-card:hover{background:var(--card);}
+  .skill-card i{font-size:20px;color:var(--gold);margin-bottom:16px;display:block;}
+  .skill-card h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;margin-bottom:8px;}
+  .skill-card p{color:var(--muted);font-size:13px;line-height:1.7;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+  .skill-tags span{
+    font-size:10px;
+    color:var(--gold-shine);
+    border:1px solid var(--card-line);
+    padding:4px 10px;
+    border-radius:2px;
+  }
+
+  /* ===== Projects ===== */
+  .projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+    gap:26px;
+  }
+  .project-card{
+    border:1px solid var(--card-line);
+    border-radius:4px;
+    overflow:hidden;
+    background:var(--card);
+    transition:all .35s ease;
+  }
+  .project-card:hover{
+    border-color:rgba(212,175,55,0.4);
+    transform:translateY(-5px);
+  }
+  .project-thumb{
+    height:170px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    color:var(--gold-deep);
+    background:linear-gradient(160deg, rgba(212,175,55,0.06), transparent);
+    border-bottom:1px solid var(--card-line);
+  }
+  .project-body{padding:24px;}
+  .project-type{
+    font-size:10px;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .project-body h3{font-family:'Space Grotesk',sans-serif;font-size:17px;margin-bottom:8px;}
+  .project-body p{color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:16px;}
+  .project-tech{display:flex;flex-wrap:wrap;gap:6px;}
+  .project-tech span{
+    font-size:10px;
+    color:var(--gold-shine);
+    border:1px solid var(--card-line);
+    padding:4px 10px;
+    border-radius:2px;
+  }
+
+  /* ===== Journey (timeline) ===== */
+  .journey-section{
+    background:var(--black-soft);
+    border-top:1px solid var(--card-line);
+    border-bottom:1px solid var(--card-line);
+  }
+  .timeline{position:relative;padding-left:40px;}
+  .timeline::before{
+    content:'';
+    position:absolute;
+    left:8px;top:6px;bottom:6px;
+    width:1px;
+    background:linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item{position:relative;margin-bottom:42px;}
+  .timeline-item:last-child{margin-bottom:0;}
+  .timeline-item::before{
+    content:'';
+    position:absolute;
+    left:-36.5px;top:5px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 10px rgba(212,175,55,0.6);
+  }
+  .timeline-item .time{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .timeline-item h3{font-family:'Space Grotesk',sans-serif;font-size:16.5px;margin-bottom:6px;}
+  .timeline-item p{color:var(--muted);font-size:13.5px;line-height:1.8;}
+
+  /* ===== Contact ===== */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.15fr;
+    gap:50px;
+  }
+  .contact-info h3{font-family:'Space Grotesk',sans-serif;font-size:22px;margin-bottom:14px;}
+  .contact-info p{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:30px;}
+  .contact-link{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    text-decoration:none;
+    color:var(--ivory);
+    padding:16px 0;
+    border-bottom:1px solid var(--card-line);
+    transition:all .3s ease;
+  }
+  .contact-link:hover{padding-left:8px;color:var(--gold-shine);}
+  .contact-link i{color:var(--gold);width:18px;}
+  .contact-link span{display:block;font-size:11px;color:var(--muted);}
+  .contact-link strong{font-size:13.5px;font-weight:500;}
+
+  .contact-form{border:1px solid var(--card-line);border-radius:4px;padding:34px;background:var(--card);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:8px;letter-spacing:.4px;}
+  .form-group input, .form-group textarea{
+    width:100%;
+    padding:13px 16px;
+    background:var(--black);
+    border:1px solid var(--card-line);
+    color:var(--ivory);
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    border-radius:2px;
+    outline:none;
+    resize:none;
+    transition:border-color .3s ease;
+  }
+  .form-group input:focus, .form-group textarea:focus{border-color:var(--gold);}
+  .form-group textarea{height:110px;}
+
+  .btn-submit{
+    width:100%;
+    padding:14px;
+    background:linear-gradient(135deg, var(--gold-deep), var(--gold));
+    color:#100D06;
+    border:none;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.5px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:all .3s ease;
+  }
+  .btn-submit:hover{box-shadow:0 8px 30px rgba(212,175,55,0.25);}
+
+  footer{
+    border-top:1px solid var(--card-line);
+    padding:36px 6%;
+    text-align:center;
+  }
+  footer p{color:var(--muted);font-size:12px;}
+
+  /* ===== Responsive ===== */
+  @media(max-width:1024px){
+    .about-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hero{flex-direction:column-reverse;text-align:center;padding-top:140px;}
+    .hero-text p{margin-left:auto;margin-right:auto;}
+    .hero-buttons, .hero-stats{justify-content:center;}
+  }
+  @media(max-width:768px){
+    nav ul{
+      position:fixed;top:0;right:-100%;
+      width:260px;height:100vh;
+      background:rgba(10,9,8,0.97);
+      border-left:1px solid var(--card-line);
+      flex-direction:column;
+      padding:100px 30px 30px;
+      transition:right .4s ease;
+    }
+    nav ul.open{right:0;}
+    nav ul li a{display:block;padding:12px 0;}
+    .hamburger{display:flex;}
+    .about-details, .form-row, .skills-grid{grid-template-columns:1fr;}
+    .projects-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="circuit-bg"></div>
+<div class="grain"></div>
+
+<header id="header">
+  <div class="logo">ALI<span>.</span></div>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="eyebrow">Mobile App Developer</div>
+    <h1>Ali Raza<br><span class="shine">builds apps that feel effortless.</span></h1>
+    <div class="role">Android &nbsp;&middot;&nbsp; iOS &nbsp;&middot;&nbsp; Flutter &nbsp;&middot;&nbsp; React Native</div>
+    <p>I design and build mobile applications end-to-end — from first wireframe to a
+      published, App Store-ready product. Focused on clean architecture, smooth
+      performance, and interfaces people actually enjoy using.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn-gold"><i class="fas fa-mobile-screen-button"></i> View Work</a>
+      <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><h3>3+</h3><p>Years Experience</p></div>
+      <div class="stat"><h3>12+</h3><p>Apps Shipped</p></div>
+      <div class="stat"><h3>8</h3><p>Technologies</p></div>
+    </div>
+  </div>
+  <div class="hero-mark">
+    <div class="icon-frame"><i class="fas fa-layer-group"></i></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-frame">Photo</div>
+    <div class="about-text">
+      <div class="label">About Me</div>
+      <h2 class="title">Turning ideas into <span class="shine">products people use</span></h2>
+      <p>I'm Ali, a mobile app developer with a strong focus on native and
+        cross-platform development. My work spans the full product cycle —
+        planning, building, testing, and shipping apps used by real people.</p>
+      <p>I care about the details that make an app feel fast and honest: clean
+        state management, thoughtful animation, and interfaces that don't get
+        in the way.</p>
+      <div class="about-details">
+        <div class="detail"><i class="fas fa-briefcase"></i><span>Role: </span><strong>Mobile App Developer</strong></div>
+        <div class="detail"><i class="fas fa-location-dot"></i><span>Based in: </span><strong>Pakistan</strong></div>
+        <div class="detail"><i class="fas fa-graduation-cap"></i><span>Focus: </span><strong>Flutter & Native</strong></div>
+        <div class="detail"><i class="fas fa-circle-check"></i><span>Status: </span><strong>Open to work</strong></div>
+      </div>
+      <a href="#contact" class="btn-gold"><i class="fas fa-comments"></i> Let's Talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div class="label">My Skills</div>
+    <h2 class="title">Tools & technologies <span class="shine">I work with</span></h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fas fa-mobile-screen-button"></i>
+        <h3>Mobile Development</h3>
+        <p>Native and cross-platform apps built for performance and scale.</p>
+        <div class="skill-tags"><span>Flutter</span><span>Kotlin</span><span>Swift</span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h3>Programming</h3>
+        <p>Strong foundation across languages used in modern app development.</p>
+        <div class="skill-tags"><span>Dart</span><span>JavaScript</span><span>Java</span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-server"></i>
+        <h3>Backend & APIs</h3>
+        <p>Connecting apps to real data with clean, reliable integrations.</p>
+        <div class="skill-tags"><span>Firebase</span><span>REST</span><span>Node.js</span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-pen-ruler"></i>
+        <h3>UI / UX</h3>
+        <p>Designing interfaces that are simple, consistent, and intuitive.</p>
+        <div class="skill-tags"><span>Figma</span><span>Prototyping</span><span>Design Systems</span></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code-branch"></i>
+        <h3>Tools & Workflow</h3>
+        <p>Version control, testing, and deployment for production apps.</p>
+        <div class="skill-tags"><span>Git</span><span>CI/CD</span><span>Play Console</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="label">Portfolio</div>
+  <h2 class="title">Selected <span class="shine">Work</span></h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-thumb"><i class="fas fa-cart-shopping"></i></div>
+      <div class="project-body">
+        <div class="project-type">Mobile App</div>
+        <h3>Project Name One</h3>
+        <p>Short one-line description of what this app does and the problem it solves.</p>
+        <div class="project-tech"><span>Flutter</span><span>Firebase</span></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb"><i class="fas fa-clipboard-list"></i></div>
+      <div class="project-body">
+        <div class="project-type">Mobile App</div>
+        <h3>Project Name Two</h3>
+        <p>Short one-line description of what this app does and the problem it solves.</p>
+        <div class="project-tech"><span>Kotlin</span><span>REST API</span></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb"><i class="fas fa-comments"></i></div>
+      <div class="project-body">
+        <div class="project-type">Mobile App</div>
+        <h3>Project Name Three</h3>
+        <p>Short one-line description of what this app does and the problem it solves.</p>
+        <div class="project-tech"><span>React Native</span><span>Node.js</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey-section" id="journey">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div class="label">My Story</div>
+    <h2 class="title">Career <span class="shine">Path</span></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">2022</div>
+        <h3>Started Learning App Development</h3>
+        <p>Began learning mobile development fundamentals and built first small projects.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2023</div>
+        <h3>First Professional Role</h3>
+        <p>Joined a team as a junior mobile developer, working on real production apps.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2024 — Now</div>
+        <h3>Mobile App Developer</h3>
+        <p>Leading development of full mobile applications from concept to release.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="label">Get In Touch</div>
+  <h2 class="title">Let's <span class="shine">Connect</span></h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Have a project in mind?</h3>
+      <p>Open to freelance projects, collaborations, and full-time opportunities. Feel free to reach out.</p>
+      <a href="mailto:hello@example.com" class="contact-link">
+        <i class="fas fa-envelope"></i>
+        <div><span>Email</span><strong>hello@example.com</strong></div>
+      </a>
+      <a href="#" class="contact-link">
+        <i class="fab fa-whatsapp"></i>
+        <div><span>WhatsApp</span><strong>+92 3XX XXXXXXX</strong></div>
+      </a>
+      <a href="#" class="contact-link">
+        <i class="fab fa-linkedin-in"></i>
+        <div><span>LinkedIn</span><strong>/in/ali-raza</strong></div>
+      </a>
+    </div>
+    <form class="contact-form">
+      <div class="form-row">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="John Doe"></div>
+        <div class="form-group"><label>Your Email</label><input type="email" placeholder="john@example.com"></div>
+      </div>
+      <div class="form-group"><label>Subject</label><input type="text" placeholder="Project Collaboration"></div>
+      <div class="form-group"><label>Message</label><textarea placeholder="Write your message here..."></textarea></div>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Ali Khan. All rights reserved.</p>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const sections = document.querySelectorAll('section[id]');
+  const navA = document.querySelectorAll('nav ul li a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 150) cur = s.id; });
+    navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  });
+</script>
+
+</body>
+</html>
