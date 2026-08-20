@@ -7666,6 +7666,21 @@
        FINAL POLISH — testimonials + footer
        ========================================================= */
 
+    /* Keep the testimonials heading in the same left-aligned sequence as Tech Stack */
+    #testimonials .section-inner > .label,
+    #testimonials .section-inner > .title {
+      text-align: left !important;
+    }
+
+    #testimonials .section-inner > .label {
+      display: inline-flex;
+      justify-content: flex-start;
+    }
+
+    #testimonials .section-inner > .title {
+      margin-bottom: 30px;
+    }
+
     /* Section heading: same visual language as the other sections */
     .testimonials-title,
     .testimonial-heading,
@@ -8426,7 +8441,729 @@
         font-size: 10px !important;
       }
     }
-  </style>
+  
+    /* =========================================================
+       COMPACT TECH STACK — cleaner, tighter presentation
+       Keeps the existing filters and progress data, but removes
+       the excessive vertical space from the original card grid.
+       ========================================================= */
+    .skills-section {
+      padding-top: 72px !important;
+      padding-bottom: 72px !important;
+    }
+
+    .skills-section .label {
+      margin-bottom: 7px;
+    }
+
+    .skills-section .title {
+      margin-bottom: 24px !important;
+    }
+
+    .skills-filter {
+      gap: 5px !important;
+      padding: 5px !important;
+      margin: 0 auto 22px !important;
+      border-radius: 13px !important;
+    }
+
+    .filter-pill {
+      padding: 7px 12px !important;
+      font-size: 11px !important;
+      border-radius: 8px !important;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+      gap: 10px !important;
+    }
+
+    .tech-card {
+      min-height: 0 !important;
+      padding: 13px 14px 11px !important;
+      border-radius: 12px !important;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+    }
+
+    .tech-card:hover {
+      transform: translateY(-3px) !important;
+    }
+
+    .tech-card-head {
+      gap: 7px !important;
+      margin-bottom: 9px !important;
+    }
+
+    .tech-card-name {
+      gap: 7px !important;
+      font-size: 12.5px !important;
+      line-height: 1.2 !important;
+    }
+
+    .tech-dot {
+      width: 7px !important;
+      height: 7px !important;
+    }
+
+    .tech-pct {
+      font-size: 10.5px !important;
+    }
+
+    .tech-bar-track {
+      height: 3px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .tech-tag {
+      font-size: 8.5px !important;
+      padding: 3px 8px !important;
+      border-radius: 999px !important;
+    }
+
+    /* Beyond Code stays part of the same section, but much tighter. */
+    .beyond-code-head {
+      margin: 24px 0 12px !important;
+      padding-top: 18px !important;
+    }
+
+    .beyond-code-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      gap: 10px !important;
+    }
+
+    .soft-skill-card {
+      min-height: 0 !important;
+      padding: 14px 13px 12px !important;
+    }
+
+    .soft-skill-card .tech-card-head {
+      margin-bottom: 8px !important;
+    }
+
+    .soft-skill-card .tech-card-name {
+      font-size: 11.5px !important;
+    }
+
+    .soft-skill-desc {
+      font-size: 10px !important;
+      line-height: 1.45 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .soft-skill-icon {
+      width: 26px !important;
+      height: 26px !important;
+      border-radius: 8px !important;
+      font-size: 10px !important;
+    }
+
+    /* Footer tool row: compact enough to hold all seven logos cleanly. */
+    .ar-features {
+      gap: 8px !important;
+      margin-top: 20px !important;
+      max-width: 720px;
+    }
+
+    .ar-footer .ar-pill {
+      min-width: 0 !important;
+      height: 36px !important;
+      padding: 0 11px !important;
+      gap: 7px !important;
+      border-radius: 999px !important;
+      font-size: 10.5px !important;
+      white-space: nowrap;
+    }
+
+    .ar-footer .ar-pill i {
+      font-size: 13px !important;
+    }
+
+    /* The old copyright strip was intentionally removed. */
+    .ar-bottom {
+      display: none !important;
+    }
+
+    @media (max-width: 1180px) {
+      .tech-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      }
+
+      .beyond-code-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .skills-section {
+        padding-top: 58px !important;
+        padding-bottom: 58px !important;
+      }
+
+      .skills-filter {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .beyond-code-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .ar-features {
+        gap: 6px !important;
+      }
+
+      .ar-footer .ar-pill {
+        height: 32px !important;
+        padding: 0 9px !important;
+        font-size: 9px !important;
+      }
+
+      .ar-footer .ar-pill i {
+        font-size: 11px !important;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .tech-grid,
+      .beyond-code-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+  
+/* ===== Projects — compact polish + golden border glow ===== */
+.projects-heading-row{
+  align-items:flex-start !important;
+  justify-content:flex-start !important;
+  text-align:left !important;
+  gap:0 !important;
+  margin-bottom:22px !important;
+}
+.projects-heading-copy{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+}
+.projects-heading-copy .label{margin:0 !important;}
+.projects-heading-copy .title{margin:0 !important;font-size:clamp(30px,3.2vw,43px) !important;}
+
+.project-mini-card,
+.project-feature,
+.project-rail-card{
+  border-color:rgba(212,175,55,.22) !important;
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,.04),
+    0 10px 30px rgba(0,0,0,.22),
+    0 0 18px rgba(212,175,55,.08) !important;
+  position:relative;
+  overflow:hidden;
+}
+.project-mini-card::after,
+.project-feature::after,
+.project-rail-card::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg,
+      transparent 0%,
+      rgba(244,228,176,.02) 34%,
+      rgba(244,228,176,.62) 48%,
+      rgba(212,175,55,.16) 55%,
+      transparent 72%);
+  background-size:220% 100%;
+  animation:projectBorderShine 4.8s ease-in-out infinite;
+  mix-blend-mode:screen;
+  opacity:.8;
+}
+@keyframes projectBorderShine{
+  0%,72%{background-position:180% 0;opacity:.35}
+  88%{background-position:0% 0;opacity:.95}
+  100%{background-position:-30% 0;opacity:.35}
+}
+.project-mini-card:hover,
+.project-feature:hover,
+.project-rail-card:hover{
+  border-color:rgba(244,228,176,.72) !important;
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.28),
+    0 0 22px rgba(212,175,55,.18),
+    inset 0 0 18px rgba(212,175,55,.045) !important;
+}
+
+/* Slightly smaller project cards/front presentation */
+.project-mini-card{transform:scale(.97);transform-origin:center;}
+.project-mini-card:hover{transform:translateY(-4px) scale(.98) !important;}
+.project-mini-image{height:205px !important;}
+.project-mini-content{padding:15px 16px 14px !important;}
+.project-mini-content h3{font-size:16px !important;}
+.project-mini-content p{font-size:10px !important;line-height:1.48 !important;min-height:30px !important;}
+
+@media(max-width:650px){
+  .projects-heading-copy .title{font-size:29px !important;}
+  .project-mini-card{transform:none;}
+  .project-mini-image{height:190px !important;}
+}
+
+/* About highlights: keep the four requested front-facing feature points compact */
+.about-highlights .highlight-item{
+  border-color:rgba(212,175,55,.20) !important;
+  box-shadow:0 0 14px rgba(212,175,55,.07);
+  position:relative;
+  overflow:hidden;
+}
+.about-highlights .highlight-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  box-shadow:inset 0 0 18px rgba(212,175,55,.055);
+  animation:highlightGlow 3.6s ease-in-out infinite;
+}
+@keyframes highlightGlow{
+  0%,100%{opacity:.35}
+  50%{opacity:1}
+}
+
+
+/* ===== Front stats — smaller, cleaner ===== */
+.hero-stats .stat{
+  transform:scale(.92);
+  transform-origin:left center;
+}
+.hero-stats .stat-text h3{font-size:28px !important;}
+.hero-stats .stat-text p{font-size:10px !important;}
+
+
+/* ===== About highlights — compact boxes around short text ===== */
+.about-highlights{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:10px !important;
+  margin-top:18px !important;
+}
+.about-highlights .highlight-item{
+  min-height:0 !important;
+  height:auto !important;
+  padding:11px 13px !important;
+  gap:9px !important;
+  border-radius:10px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  box-sizing:border-box !important;
+}
+.about-highlights .highlight-item i{
+  width:28px !important;
+  height:28px !important;
+  min-width:28px !important;
+  display:grid !important;
+  place-items:center !important;
+  font-size:12px !important;
+  border-radius:8px !important;
+}
+.about-highlights .highlight-item span{
+  font-size:11px !important;
+  line-height:1.25 !important;
+  white-space:nowrap !important;
+}
+@media(max-width:600px){
+  .about-highlights{grid-template-columns:1fr !important;}
+  .about-highlights .highlight-item span{font-size:11px !important;}
+}
+
+</style>
+
+<style id="projects-carousel-v8">
+  /* ================= PROJECTS — CLEAN 3-CARD CAROUSEL ================= */
+  #projects.projects-carousel-section {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 0 58px;
+    background:
+      radial-gradient(circle at 16% 42%, rgba(212,175,55,.045), transparent 27%),
+      radial-gradient(circle at 86% 70%, rgba(244,228,176,.035), transparent 25%),
+      linear-gradient(180deg, rgba(10,9,7,.98), rgba(7,6,5,1));
+  }
+
+  .projects-carousel-glow {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -170px;
+    top: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,.07), transparent 68%);
+    filter: blur(10px);
+    pointer-events: none;
+  }
+
+  .projects-heading-row {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: left;
+    gap: 28px;
+    margin-bottom: 30px;
+  }
+
+  .projects-heading-row > div:first-child {
+    text-align: left;
+  }
+
+  .projects-heading-row .label {
+    margin-bottom: 10px;
+  }
+
+  #projects.projects-carousel-section .title {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  /* Extra decorative star field for the Projects section */
+  .projects-star-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .projects-star-field i {
+    position: absolute;
+    color: #f4c337;
+    font-style: normal;
+    line-height: 1;
+    opacity: .55;
+    text-shadow: 0 0 10px rgba(245,198,59,.65);
+    animation: projectsStarPulse 2.8s ease-in-out infinite;
+  }
+
+  .projects-star-field i:nth-child(1){left:4%;top:13%;font-size:12px;}
+  .projects-star-field i:nth-child(2){left:10%;top:72%;font-size:18px;animation-delay:.3s;}
+  .projects-star-field i:nth-child(3){left:24%;top:20%;font-size:9px;animation-delay:.6s;}
+  .projects-star-field i:nth-child(4){left:38%;top:82%;font-size:14px;animation-delay:.9s;}
+  .projects-star-field i:nth-child(5){left:52%;top:11%;font-size:10px;animation-delay:1.2s;}
+  .projects-star-field i:nth-child(6){left:67%;top:78%;font-size:16px;animation-delay:1.5s;}
+  .projects-star-field i:nth-child(7){left:79%;top:18%;font-size:11px;animation-delay:1.8s;}
+  .projects-star-field i:nth-child(8){left:88%;top:62%;font-size:20px;animation-delay:2.1s;}
+  .projects-star-field i:nth-child(9){left:94%;top:28%;font-size:9px;animation-delay:2.4s;}
+  .projects-star-field i:nth-child(10){left:47%;top:92%;font-size:12px;animation-delay:2.7s;}
+
+  @keyframes projectsStarPulse {
+    0%,100% { opacity:.22; transform:scale(.72) rotate(0deg); }
+    50% { opacity:.9; transform:scale(1.18) rotate(45deg); }
+  }
+
+  /* Compact 3-card gallery with clear, solid side navigation. */
+  .projects-carousel-wrap {
+    position: relative;
+    z-index: 3;
+    width: min(100%, 1160px);
+    margin: 0 auto;
+    padding: 0 72px;
+  }
+
+  .projects-carousel-controls {
+    position: absolute;
+    inset: 0;
+    z-index: 8;
+    pointer-events: none;
+  }
+
+  .projects-carousel-controls .projects-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: auto;
+  }
+
+  #projectsPrev { left: 8px; }
+  #projectsNext { right: 8px; }
+
+  .projects-nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    background: #0d0d0d;
+    color: #f4e4b0;
+    display: grid;
+    place-items: center;
+    font-size: 19px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 8px 22px rgba(0,0,0,.55), 0 0 0 4px rgba(8,7,5,.88);
+    transition: transform .24s ease, border-color .24s ease, background .24s ease, box-shadow .24s ease;
+  }
+
+  .projects-nav-btn:hover,
+  .projects-nav-btn:focus-visible {
+    border-color: #f0d878;
+    color: #fff8dc;
+    background: #211b0e;
+    box-shadow: 0 10px 26px rgba(0,0,0,.48), 0 0 18px rgba(212,175,55,.18);
+    transform: translateY(-50%) scale(1.05);
+    outline: none;
+  }
+
+  .projects-nav-btn:active {
+    transform: translateY(-50%) scale(.97);
+  }
+
+  /* Floating rope + star detail under the project arrows */
+  .projects-nav-btn::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 2px);
+    width: 1px;
+    height: 34px;
+    background: linear-gradient(to bottom, rgba(212,175,55,.85), rgba(212,175,55,.18));
+    transform-origin: top center;
+    animation: arrowRopeSway 2.8s ease-in-out infinite;
+  }
+
+  .projects-nav-btn::after {
+    content: "✦";
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 29px);
+    color: #d4af37;
+    font-size: 11px;
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(212,175,55,.65);
+    transform: translateX(-50%);
+    animation: arrowStarFloat 2.8s ease-in-out infinite;
+  }
+
+  #projectsNext::before,
+  #projectsNext::after {
+    animation-delay: -.9s;
+  }
+
+  @keyframes arrowRopeSway {
+    0%, 100% { transform: translateX(-50%) rotate(-5deg); }
+    50% { transform: translateX(-50%) rotate(5deg); }
+  }
+
+  @keyframes arrowStarFloat {
+    0%, 100% { transform: translate(-50%, 0) rotate(-7deg); }
+    50% { transform: translate(-50%, 4px) rotate(7deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .projects-nav-btn::before,
+    .projects-nav-btn::after {
+      animation: none;
+    }
+  }
+
+  .projects-page {
+    min-width: 78px;
+    text-align: center;
+    color: rgba(244,228,176,.62);
+    font: 700 10px 'Space Grotesk', sans-serif;
+    letter-spacing: 1.5px;
+  }
+
+  .projects-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 4px 0 2px;
+  }
+
+  .projects-track {
+    display: flex;
+    gap: 16px;
+    will-change: transform;
+    transition: transform .7s cubic-bezier(.22,.75,.2,1);
+  }
+
+  .project-mini-card {
+    position: relative;
+    flex: 0 0 calc((100% - 32px) / 3);
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(244,228,176,.14);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(27,23,15,.97), rgba(11,9,7,.99));
+    box-shadow: 0 16px 38px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.04);
+    cursor: pointer;
+    transition: transform .32s ease, border-color .32s ease, box-shadow .32s ease;
+  }
+
+  .project-mini-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(244,228,176,.32);
+    box-shadow: 0 22px 48px rgba(0,0,0,.40), 0 0 24px rgba(212,175,55,.055);
+  }
+
+  .project-mini-card.is-active {
+    border-color: rgba(212,175,55,.78);
+    box-shadow: 0 22px 52px rgba(0,0,0,.42), 0 0 28px rgba(212,175,55,.10), inset 0 0 18px rgba(212,175,55,.025);
+  }
+
+  .project-mini-card.is-active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(244,228,176,.18);
+  }
+
+  .project-mini-image {
+    position: relative;
+    height: 236px;
+    padding: 9px;
+    display: grid;
+    place-items: center;
+    background: #080705;
+    border-bottom: 1px solid rgba(244,228,176,.09);
+  }
+
+  .project-mini-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: 11px;
+    transition: transform .45s ease, filter .45s ease;
+  }
+
+  .project-mini-card:hover .project-mini-image img,
+  .project-mini-card.is-active .project-mini-image img {
+    transform: scale(1.018);
+  }
+
+  /* No number/badge over the project image — cleaner visual focus. */
+  .project-mini-number { display: none !important; }
+
+  .project-mini-content {
+    padding: 14px 16px 16px;
+  }
+
+  .project-mini-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 7px;
+  }
+
+  .project-mini-type {
+    color: #e7c86e;
+    font: 700 8px 'Space Grotesk', sans-serif;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  .project-mini-arrow {
+    color: rgba(212,175,55,.55);
+    font-size: 13px;
+    transition: .25s ease;
+  }
+
+  .project-mini-card:hover .project-mini-arrow,
+  .project-mini-card.is-active .project-mini-arrow {
+    color: #d4af37;
+    transform: translate(2px,-2px);
+  }
+
+  .project-mini-content h3 {
+    margin: 0 0 6px;
+    color: #fffaf0;
+    font: 700 17px/1.18 'Space Grotesk', sans-serif;
+    letter-spacing: -.2px;
+  }
+
+  .project-mini-content p {
+    margin: 0;
+    color: rgba(238,234,223,.66);
+    font-size: 10.8px;
+    line-height: 1.52;
+    min-height: 33px;
+  }
+
+  .project-mini-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 11px;
+  }
+
+  .project-mini-tech span {
+    padding: 4px 8px;
+    border-radius: 999px;
+    color: #e9d79e;
+    border: 1px solid rgba(212,175,55,.16);
+    background: rgba(212,175,55,.04);
+    font: 600 8px 'Space Grotesk', sans-serif;
+  }
+
+  .projects-carousel-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    margin-top: 15px;
+    color: rgba(243,238,226,.34);
+    font: 600 8px 'Space Grotesk', sans-serif;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+  }
+
+  .projects-carousel-footer .projects-page {
+    min-width: auto;
+    color: #e7c86e;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  /* Removed the old golden progress line. */
+  .projects-progress { display: none !important; }
+
+  .projects-auto-note {
+    text-align: center;
+  }
+
+  @media (max-width: 1000px) {
+    .projects-carousel-wrap { width: min(100%, 900px); padding: 0 62px; }
+    .project-mini-card { flex-basis: calc((100% - 16px) / 2); }
+    .project-mini-image { height: 224px; }
+    #projectsPrev { left: 5px; }
+    #projectsNext { right: 5px; }
+  }
+
+  @media (max-width: 650px) {
+    #projects.projects-carousel-section { padding: 58px 0 48px; }
+    .projects-heading-row {
+      margin-bottom: 22px;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .projects-carousel-wrap { width: 100%; padding: 0 48px; }
+    .project-mini-card { flex-basis: 100%; }
+    .project-mini-image { height: 220px; }
+    #projectsPrev { left: 2px; }
+    #projectsNext { right: 2px; }
+    .projects-nav-btn { width: 42px; height: 42px; font-size: 16px; border-width: 2px; }
+  }
+</style>
+
 </head>
 
 <body>
@@ -8656,246 +9393,85 @@
     <canvas class="skills-network-canvas" id="skillsNetworkCanvas"></canvas>
     <div class="section-gold-strip"></div>
     <div class="section-inner">
-      <div class="label">My Tech Stack</div>
-      <h2 class="title">Tools &amp; technologies <span class="shine">I work with</span></h2>
-      <div class="skills-filter" id="skillsFilter">
-        <button type="button" class="filter-pill active" data-filter="all">All</button>
-        <button type="button" class="filter-pill" data-filter="frontend">Frontend</button>
-        <button type="button" class="filter-pill" data-filter="mobile">Mobile</button>
-        <button type="button" class="filter-pill" data-filter="backend">Backend</button>
-        <button type="button" class="filter-pill" data-filter="language">Language</button>
-        <button type="button" class="filter-pill" data-filter="database">Database</button>
-        <button type="button" class="filter-pill" data-filter="devops">DevOps</button>
-        <button type="button" class="filter-pill" data-filter="tools">Tools</button>
+      <div class="skills-heading-row">
+        <div>
+          <div class="label">My Tech Stack</div>
+          <h2 class="title">Built around <span class="shine">reliability</span></h2>
+        </div>
+        <div class="skills-heading-note">
+          <i class="fas fa-shield-halved"></i>
+          <span>Reliable tools. Real products.</span>
+        </div>
       </div>
 
-      <div class="tech-grid" id="techGrid">
-        <div class="tech-card" data-category="mobile">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#F4E4B0;color:#F4E4B0;"></span>React
-              Native</div>
-            <span class="tech-pct">92%</span>
+      <div class="skills-command-center">
+        <article class="skills-featured-card">
+          <div class="skills-featured-glow"></div>
+          <div class="skills-featured-top">
+            <span class="skills-mini-label">CORE STACK</span>
+            <span class="skills-index">01 / 04</span>
           </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="92" style="background:linear-gradient(90deg,#F4E4B0,#D4AF37);"></div>
-          </div>
-          <span class="tech-tag">Mobile</span>
-        </div>
-
-        <div class="tech-card" data-category="frontend">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#D4AF37;color:#D4AF37;"></span>React
+          <div class="skills-featured-main">
+            <div class="skills-featured-icon"><i class="fab fa-react"></i></div>
+            <div>
+              <h3>React Native</h3>
+              <p>My primary mobile stack for stable, scalable and production-ready apps.</p>
             </div>
-            <span class="tech-pct">90%</span>
           </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="90" style="background:linear-gradient(90deg,#D4AF37,#8A6A1F);"></div>
+          <div class="skills-meter">
+            <div class="skills-meter-meta"><span>Proficiency</span><strong>92%</strong></div>
+            <div class="skills-meter-track"><span style="width:92%"></span></div>
           </div>
-          <span class="tech-tag">Frontend</span>
-        </div>
+          <div class="skills-featured-tags">
+            <span>Mobile</span><span>Cross-platform</span><span>Production</span>
+          </div>
+        </article>
 
-        <div class="tech-card" data-category="frontend">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#E8C468;color:#E8C468;"></span>Angular
+        <div class="skills-groups">
+          <article class="skills-group-card">
+            <div class="skills-group-head">
+              <div><span class="skills-mini-label">FRONTEND</span><h3>Interface</h3></div>
+              <i class="fas fa-layer-group"></i>
             </div>
-            <span class="tech-pct">85%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="85" style="background:linear-gradient(90deg,#E8C468,#B8860B);"></div>
-          </div>
-          <span class="tech-tag">Frontend</span>
-        </div>
-
-        <div class="tech-card" data-category="language">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot"
-                style="background:#D9BB5E;color:#D9BB5E;"></span>TypeScript</div>
-            <span class="tech-pct">92%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="92" style="background:linear-gradient(90deg,#D9BB5E,#9C6B1F);"></div>
-          </div>
-          <span class="tech-tag">Language</span>
-        </div>
-
-        <div class="tech-card" data-category="mobile">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#C9A227;color:#C9A227;"></span>Flutter
+            <div class="skills-list">
+              <div class="skill-line"><span>React</span><b>90%</b><i><em style="width:90%"></em></i></div>
+              <div class="skill-line"><span>TypeScript</span><b>92%</b><i><em style="width:92%"></em></i></div>
+              <div class="skill-line"><span>HTML / CSS</span><b>93%</b><i><em style="width:93%"></em></i></div>
+              <div class="skill-line"><span>Angular</span><b>85%</b><i><em style="width:85%"></em></i></div>
             </div>
-            <span class="tech-pct">75%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="75" style="background:linear-gradient(90deg,#C9A227,#8A6A1F);"></div>
-          </div>
-          <span class="tech-tag">Mobile</span>
-        </div>
+          </article>
 
-        <div class="tech-card" data-category="backend">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#B8860B;color:#B8860B;"></span>ASP.NET
-              Core</div>
-            <span class="tech-pct">82%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="82" style="background:linear-gradient(90deg,#B8860B,#6E4E12);"></div>
-          </div>
-          <span class="tech-tag">Backend</span>
-        </div>
-
-        <div class="tech-card" data-category="language">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#E0C070;color:#E0C070;"></span>C#</div>
-            <span class="tech-pct">80%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="80" style="background:linear-gradient(90deg,#E0C070,#B8860B);"></div>
-          </div>
-          <span class="tech-tag">Language</span>
-        </div>
-
-        <div class="tech-card" data-category="database">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#CD9B45;color:#CD9B45;"></span>SQL
-              Server</div>
-            <span class="tech-pct">78%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="78" style="background:linear-gradient(90deg,#CD9B45,#8A6A1F);"></div>
-          </div>
-          <span class="tech-tag">Database</span>
-        </div>
-
-        <div class="tech-card" data-category="backend">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#D9A441;color:#D9A441;"></span>Firebase
+          <article class="skills-group-card">
+            <div class="skills-group-head">
+              <div><span class="skills-mini-label">BACKEND</span><h3>Data &amp; APIs</h3></div>
+              <i class="fas fa-server"></i>
             </div>
-            <span class="tech-pct">86%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="86" style="background:linear-gradient(90deg,#D9A441,#8A6A1F);"></div>
-          </div>
-          <span class="tech-tag">Backend</span>
-        </div>
-
-        <div class="tech-card" data-category="backend">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#C6862B;color:#C6862B;"></span>REST
-              APIs</div>
-            <span class="tech-pct">90%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="90" style="background:linear-gradient(90deg,#C6862B,#6E4E12);"></div>
-          </div>
-          <span class="tech-tag">Backend</span>
-        </div>
-
-        <div class="tech-card" data-category="database">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#E8D9A0;color:#E8D9A0;"></span>Redux
+            <div class="skills-list">
+              <div class="skill-line"><span>REST APIs</span><b>90%</b><i><em style="width:90%"></em></i></div>
+              <div class="skill-line"><span>Firebase</span><b>86%</b><i><em style="width:86%"></em></i></div>
+              <div class="skill-line"><span>Redux</span><b>84%</b><i><em style="width:84%"></em></i></div>
+              <div class="skill-line"><span>ASP.NET Core</span><b>82%</b><i><em style="width:82%"></em></i></div>
             </div>
-            <span class="tech-pct">84%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="84" style="background:linear-gradient(90deg,#E8D9A0,#B8860B);"></div>
-          </div>
-          <span class="tech-tag">Database</span>
-        </div>
+          </article>
 
-        <div class="tech-card" data-category="database">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot"
-                style="background:#D4AF37;color:#D4AF37;"></span>Geofencing</div>
-            <span class="tech-pct">72%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="72" style="background:linear-gradient(90deg,#D4AF37,#8A6A1F);"></div>
-          </div>
-          <span class="tech-tag">Database</span>
-        </div>
-
-        <div class="tech-card" data-category="devops">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#C87F3A;color:#C87F3A;"></span>App
-              Store / TestFlight</div>
-            <span class="tech-pct">88%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="88" style="background:linear-gradient(90deg,#C87F3A,#6E4E12);"></div>
-          </div>
-          <span class="tech-tag">DevOps</span>
-        </div>
-
-        <div class="tech-card" data-category="devops">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#B99A4B;color:#B99A4B;"></span>Google
-              Play</div>
-            <span class="tech-pct">88%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="88" style="background:linear-gradient(90deg,#B99A4B,#6E4E12);"></div>
-          </div>
-          <span class="tech-tag">DevOps</span>
-        </div>
-
-        <div class="tech-card" data-category="tools">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#CD9B45;color:#CD9B45;"></span>Git
+          <article class="skills-group-card">
+            <div class="skills-group-head">
+              <div><span class="skills-mini-label">DELIVERY</span><h3>Ship &amp; Scale</h3></div>
+              <i class="fas fa-rocket"></i>
             </div>
-            <span class="tech-pct">89%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="89" style="background:linear-gradient(90deg,#CD9B45,#8A6A1F);"></div>
-          </div>
-          <span class="tech-tag">Tools</span>
+            <div class="skills-list">
+              <div class="skill-line"><span>Git</span><b>89%</b><i><em style="width:89%"></em></i></div>
+              <div class="skill-line"><span>App Store</span><b>88%</b><i><em style="width:88%"></em></i></div>
+              <div class="skill-line"><span>Google Play</span><b>88%</b><i><em style="width:88%"></em></i></div>
+              <div class="skill-line"><span>Push Notifications</span><b>87%</b><i><em style="width:87%"></em></i></div>
+            </div>
+          </article>
         </div>
+      </div>
 
-        <div class="tech-card" data-category="tools">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#E8C468;color:#E8C468;"></span>HTML /
-              CSS</div>
-            <span class="tech-pct">93%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="93" style="background:linear-gradient(90deg,#E8C468,#B8860B);"></div>
-          </div>
-          <span class="tech-tag">Tools</span>
-        </div>
-
-        <div class="tech-card" data-category="tools">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot"
-                style="background:#D4AF37;color:#D4AF37;"></span>Bootstrap</div>
-            <span class="tech-pct">80%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="80" style="background:linear-gradient(90deg,#D4AF37,#8A6A1F);"></div>
-          </div>
-          <span class="tech-tag">Tools</span>
-        </div>
-
-        <div class="tech-card" data-category="devops">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#F4E4B0;color:#F4E4B0;"></span>Push
-              Notifications</div>
-            <span class="tech-pct">87%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="87" style="background:linear-gradient(90deg,#F4E4B0,#D4AF37);"></div>
-          </div>
-          <span class="tech-tag">DevOps</span>
-        </div>
-
-        <div class="tech-card" data-category="mobile">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#B8860B;color:#B8860B;"></span>Native
-              Modules</div>
-            <span class="tech-pct">80%</span>
-          </div>
-          <div class="tech-bar-track">
-            <div class="tech-bar-fill" data-pct="80" style="background:linear-gradient(90deg,#B8860B,#6E4E12);"></div>
-          </div>
-          <span class="tech-tag">Mobile</span>
-        </div>
+      <div class="skills-bottom-strip">
+        <span><i class="fas fa-circle-check"></i> Reliability-first workflow</span>
+        <span>Every tool has a purpose — not just a place on the list.</span>
       </div>
 
       <div class="beyond-code-head">
@@ -8903,133 +9479,41 @@
         <span>How I work beyond the stack</span>
       </div>
       <div class="beyond-code-grid">
-        <div class="tech-card soft-skill-card">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot"
-                style="background:#F4E4B0;color:#F4E4B0;"></span>Mentorship</div><span class="soft-skill-icon"><i
-                class="fas fa-people-arrows"></i></span>
-          </div>
-          <p class="soft-skill-desc">Sharing knowledge, supporting teammates, and helping ideas move forward.</p><span
-            class="tech-tag">People</span>
-        </div>
-        <div class="tech-card soft-skill-card">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot" style="background:#D4AF37;color:#D4AF37;"></span>Critical
-              Thinking</div><span class="soft-skill-icon"><i class="fas fa-brain"></i></span>
-          </div>
-          <p class="soft-skill-desc">Breaking complex problems into clear, practical decisions.</p><span
-            class="tech-tag">Mindset</span>
-        </div>
-        <div class="tech-card soft-skill-card">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot"
-                style="background:#E8D49A;color:#E8D49A;"></span>Collaboration &amp; Teamwork</div><span
-              class="soft-skill-icon"><i class="fas fa-users"></i></span>
-          </div>
-          <p class="soft-skill-desc">Working openly with clients and teams to build better products.</p><span
-            class="tech-tag">Team</span>
-        </div>
-        <div class="tech-card soft-skill-card">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot"
-                style="background:#C9A653;color:#C9A653;"></span>Flexibility &amp; Adaptability</div><span
-              class="soft-skill-icon"><i class="fas fa-arrows-rotate"></i></span>
-          </div>
-          <p class="soft-skill-desc">Adapting quickly when requirements, priorities, or products evolve.</p><span
-            class="tech-tag">Agile</span>
-        </div>
-        <div class="tech-card soft-skill-card">
-          <div class="tech-card-head">
-            <div class="tech-card-name"><span class="tech-dot"
-                style="background:#F1DFA7;color:#F1DFA7;"></span>Open-Mindedness</div><span class="soft-skill-icon"><i
-                class="fas fa-lightbulb"></i></span>
-          </div>
-          <p class="soft-skill-desc">Staying curious, listening carefully, and welcoming better approaches.</p><span
-            class="tech-tag">Growth</span>
-        </div>
+        <div class="tech-card soft-skill-card"><div class="tech-card-head"><div class="tech-card-name"><span class="tech-dot" style="background:#F4E4B0;color:#F4E4B0;"></span>Mentorship</div><span class="soft-skill-icon"><i class="fas fa-people-arrows"></i></span></div><p class="soft-skill-desc">Sharing knowledge, supporting teammates, and helping ideas move forward.</p><span class="tech-tag">People</span></div>
+        <div class="tech-card soft-skill-card"><div class="tech-card-head"><div class="tech-card-name"><span class="tech-dot" style="background:#D4AF37;color:#D4AF37;"></span>Critical Thinking</div><span class="soft-skill-icon"><i class="fas fa-brain"></i></span></div><p class="soft-skill-desc">Breaking complex problems into clear, practical decisions.</p><span class="tech-tag">Mindset</span></div>
+        <div class="tech-card soft-skill-card"><div class="tech-card-head"><div class="tech-card-name"><span class="tech-dot" style="background:#E8D49A;color:#E8D49A;"></span>Collaboration &amp; Teamwork</div><span class="soft-skill-icon"><i class="fas fa-users"></i></span></div><p class="soft-skill-desc">Working openly with clients and teams to build better products.</p><span class="tech-tag">Team</span></div>
+        <div class="tech-card soft-skill-card"><div class="tech-card-head"><div class="tech-card-name"><span class="tech-dot" style="background:#C9A653;color:#C9A653;"></span>Flexibility &amp; Adaptability</div><span class="soft-skill-icon"><i class="fas fa-arrows-rotate"></i></span></div><p class="soft-skill-desc">Adapting quickly when requirements, priorities, or products evolve.</p><span class="tech-tag">Agile</span></div>
+        <div class="tech-card soft-skill-card"><div class="tech-card-head"><div class="tech-card-name"><span class="tech-dot" style="background:#F1DFA7;color:#F1DFA7;"></span>Open-Mindedness</div><span class="soft-skill-icon"><i class="fas fa-lightbulb"></i></span></div><p class="soft-skill-desc">Staying curious, listening carefully, and welcoming better approaches.</p><span class="tech-tag">Growth</span></div>
       </div>
     </div>
   </section>
-
-  <section id="projects">
-    <div class="projects-decor projects-decor-left"><i class="fas fa-code"></i><i
-        class="fas fa-mobile-screen-button"></i><i class="fas fa-bolt"></i></div>
-    <div class="projects-decor projects-decor-right"><i class="fas fa-cloud-arrow-up"></i><i
-        class="fas fa-circle-check"></i><i class="fas fa-layer-group"></i></div>
+  <section id="projects" class="projects-carousel-section">
     <div class="section-gold-strip"></div>
-    <div class="ambient-glow">
-      <div class="glow-orb"
-        style="width:350px;height:350px;top:-90px;right:-90px;background:radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);">
-      </div>
+    <div class="projects-carousel-glow"></div>
+    <div class="projects-star-field" aria-hidden="true">
+      <i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i>
+      <i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i>
     </div>
     <div class="section-inner">
-      <div class="label">Selected Work</div>
-      <h2 class="title">Live Production <span class="shine">Apps</span></h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-thumb"><img class="project-image" src="images/orchid.png" alt="Orchid app preview" loading="lazy"></div>
-          <div class="project-body">
-            <div class="project-type">iOS &amp; Android</div>
-            <h3>Orchid</h3>
-            <p>Evidence-based reproductive health app with goal tracking, reminders, and structured health planning.</p>
-            <div class="project-tech"><span>React Native</span><span>Health APIs</span></div>
-          </div>
+      <div class="projects-heading-row">
+        <div class="projects-heading-copy">
+          <div class="label">Selected Work</div>
+          <h2 class="title">Projects <span class="shine">I’ve Built</span></h2>
         </div>
-        <div class="project-card">
-          <div class="project-thumb"><img class="project-image" src="images/loader.png" alt="Lorry Loader app preview" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-type">iOS &amp; Android</div>
-            <h3>Lorry Loader</h3>
-            <p>Crane safety inspection app with checklist workflows, photo evidence capture, and automated PDF
-              reporting.</p>
-            <div class="project-tech"><span>React Native</span><span>PDF Reports</span></div>
-          </div>
+      </div>
+
+      <div class="projects-carousel-wrap">
+        <div class="projects-carousel" id="projectsCarousel">
+          <div class="projects-track" id="projectsTrack"></div>
         </div>
-        <div class="project-card">
-          <div class="project-thumb"><img class="project-image" src="images/smartfarmer.png"
-              alt="Smart Farmer app preview" loading="lazy"></div>
-          <div class="project-body">
-            <div class="project-type">iOS &amp; Android</div>
-            <h3>Smart Farmer</h3>
-            <p>Farm safety and compliance management app with digital inspections, machinery tracking, and real-time
-              reporting.</p>
-            <div class="project-tech"><span>React Native</span><span>Native UI</span></div>
-          </div>
+        <div class="projects-carousel-controls" aria-label="Project navigation">
+          <button class="projects-nav-btn" id="projectsPrev" type="button" aria-label="Previous projects">&#8592;</button>
+          <button class="projects-nav-btn" id="projectsNext" type="button" aria-label="Next projects">&#8594;</button>
         </div>
-        <div class="project-card">
-          <div class="project-thumb"><img class="project-image" src="images/biorisk.png"
-              alt="Reliance Protect app preview" loading="lazy"></div>
-          <div class="project-body">
-            <div class="project-type">iOS &amp; Android</div>
-            <h3>Reliance Protect</h3>
-            <p>Lone worker safety system with SOS alerts, fall detection, GPS tracking, and real-time emergency
-              escalation.</p>
-            <div class="project-tech"><span>React Native</span><span>Native Fall Detection</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-thumb"><img class="project-image" src="images/flareeducation.png"
-              alt="FlareEducation app preview" loading="lazy"></div>
-          <div class="project-body">
-            <div class="project-type">iOS &amp; Android</div>
-            <h3>FlareEducation</h3>
-            <p>Multi-role learning &amp; session tracking app connecting tutors, students, and guardians with live
-              location.</p>
-            <div class="project-tech"><span>React Native</span><span>Google Maps SDK</span></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-thumb"><img class="project-image" src="images/biorisk.png" alt="BioRisk app preview" loading="lazy">
-          </div>
-          <div class="project-body">
-            <div class="project-type">iOS &amp; Android</div>
-            <h3>BioRisk</h3>
-            <p>Offline-first property inspection app with rebuilt sync architecture, signature capture, and guided
-              flows.</p>
-            <div class="project-tech"><span>React Native</span><span>Offline Sync</span></div>
-          </div>
-        </div>
+      </div>
+
+      <div class="projects-carousel-footer">
+        <span class="projects-page" id="projectsPage">01 — 03</span>
       </div>
     </div>
   </section>
@@ -10076,6 +10560,891 @@
         padding: 5px 7px;
       }
     }
+    /* =========================================================
+       SKILLS — SERVICES-STYLE SHOWCASE
+       Compact, premium cards inspired by the Services section.
+       ========================================================= */
+    .skills-section {
+      padding-top: 78px !important;
+      padding-bottom: 72px !important;
+    }
+
+    .skills-heading-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .skills-heading-row .title {
+      margin-bottom: 0 !important;
+    }
+
+    .skills-heading-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      border: 1px solid rgba(212,175,55,.22);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(212,175,55,.045);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10.5px;
+      letter-spacing: .3px;
+      white-space: nowrap;
+    }
+
+    .skills-heading-note i {
+      color: var(--gold);
+    }
+
+    /* ===== SKILLS V3 — reliability command center ===== */
+    .skills-command-center {
+      display: grid;
+      grid-template-columns: minmax(285px, .82fr) minmax(0, 1.65fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+    .skills-featured-card,
+    .skills-group-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,.18);
+      background: linear-gradient(145deg, rgba(24,21,15,.94), rgba(10,10,9,.96));
+      box-shadow: 0 16px 40px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.025);
+    }
+    .skills-featured-card {
+      min-height: 100%;
+      padding: 23px;
+      border-radius: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .skills-featured-card::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background: linear-gradient(135deg, rgba(212,175,55,.10), transparent 35%, transparent 70%, rgba(212,175,55,.04));
+      pointer-events:none;
+    }
+    .skills-featured-glow {
+      position:absolute;
+      width:190px;height:190px;
+      right:-80px;top:-90px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(244,228,176,.16),transparent 68%);
+    }
+    .skills-featured-top,.skills-featured-main,.skills-meter,.skills-featured-tags { position:relative; z-index:1; }
+    .skills-featured-top,.skills-group-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .skills-mini-label { font:600 9px/1 'Space Grotesk',sans-serif; letter-spacing:2.4px; color:var(--gold); }
+    .skills-index { font:600 9px/1 'Space Grotesk',sans-serif; letter-spacing:1.4px; color:rgba(244,228,176,.42); }
+    .skills-featured-main { display:flex; align-items:center; gap:15px; margin:31px 0 25px; }
+    .skills-featured-icon {
+      width:56px;height:56px;flex:0 0 56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+      color:var(--gold-shine);font-size:25px;border:1px solid rgba(212,175,55,.32);
+      background:linear-gradient(145deg,rgba(212,175,55,.18),rgba(212,175,55,.025));
+      box-shadow:0 0 24px rgba(212,175,55,.09);
+    }
+    .skills-featured-main h3 { margin:0 0 6px; color:var(--ivory); font:600 21px/1.2 'Space Grotesk',sans-serif; }
+    .skills-featured-main p { margin:0; color:var(--muted); font-size:11px; line-height:1.65; }
+    .skills-meter-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; color:rgba(173,165,147,.75); font-size:10px; }
+    .skills-meter-meta strong { color:var(--gold-shine); font:700 15px/1 'Space Grotesk',sans-serif; }
+    .skills-meter-track { height:6px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.055); }
+    .skills-meter-track span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--gold-deep),var(--gold-shine)); box-shadow:0 0 14px rgba(212,175,55,.28); }
+    .skills-featured-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:19px; }
+    .skills-featured-tags span { padding:6px 9px; border:1px solid rgba(212,175,55,.15); border-radius:8px; background:rgba(255,255,255,.025); color:rgba(243,238,226,.72); font:500 9px/1 'Space Grotesk',sans-serif; }
+    .skills-groups { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .skills-group-card { padding:18px 17px 16px; border-radius:17px; }
+    .skills-group-card::after { content:''; position:absolute; width:110px;height:110px;right:-55px;top:-55px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.09),transparent 68%); }
+    .skills-group-head { position:relative; z-index:1; align-items:flex-start; margin-bottom:19px; }
+    .skills-group-head h3 { margin:6px 0 0; color:var(--ivory); font:600 16px/1.2 'Space Grotesk',sans-serif; }
+    .skills-group-head > i { color:var(--gold); font-size:14px; }
+    .skills-list { position:relative; z-index:1; display:grid; gap:13px; }
+    .skill-line { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:7px 8px; align-items:center; }
+    .skill-line span { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:rgba(243,238,226,.82); font:500 10.5px/1 'Space Grotesk',sans-serif; }
+    .skill-line b { color:var(--gold-shine); font:600 10px/1 'Space Grotesk',sans-serif; }
+    .skill-line > i { grid-column:1/-1; display:block; height:3px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.055); }
+    .skill-line > i em { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,rgba(212,175,55,.55),var(--gold)); font-style:normal; box-shadow:0 0 8px rgba(212,175,55,.16); }
+    .skills-bottom-strip { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-top:12px; padding:10px 2px 0; border-top:1px solid rgba(212,175,55,.09); color:rgba(173,165,147,.62); font-size:9.5px; }
+    .skills-bottom-strip span:first-child { color:rgba(244,228,176,.72); }
+    .skills-bottom-strip i { color:var(--gold); margin-right:6px; }
+    @media (max-width: 980px) {
+      .skills-command-center { grid-template-columns:1fr; }
+      .skills-featured-card { min-height:0; }
+    }
+    @media (max-width: 760px) {
+      .skills-groups { grid-template-columns:1fr; }
+      .skills-bottom-strip { flex-direction:column; align-items:flex-start; gap:6px; }
+      .skills-featured-card { padding:20px; }
+    }
+
+    .skills-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill-stack-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 0;
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(212,175,55,.18);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(25,21,14,.88), rgba(12,11,9,.94));
+      box-shadow: 0 14px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(244,228,176,.035);
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    }
+
+    .skill-stack-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--gold-shine), var(--gold), var(--gold-deep));
+      opacity: .85;
+    }
+
+    .skill-stack-card::after {
+      content: '';
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -70px;
+      top: -75px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,175,55,.12), transparent 68%);
+      pointer-events: none;
+    }
+
+    .skill-stack-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,175,55,.42);
+      box-shadow: 0 18px 42px rgba(0,0,0,.30), 0 0 28px rgba(212,175,55,.07);
+    }
+
+    .skill-stack-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .skill-stack-number {
+      font: 600 10px/1 'Space Grotesk', sans-serif;
+      letter-spacing: 2px;
+      color: rgba(244,228,176,.45);
+    }
+
+    .skill-stack-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-shine);
+      background: linear-gradient(145deg, rgba(212,175,55,.17), rgba(212,175,55,.035));
+      border: 1px solid rgba(212,175,55,.30);
+      box-shadow: 0 0 18px rgba(212,175,55,.07);
+    }
+
+    .skill-stack-body {
+      position: relative;
+      z-index: 1;
+    }
+
+    .skill-stack-label {
+      display: block;
+      margin-bottom: 5px;
+      font: 600 9px/1 'Space Grotesk', sans-serif;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+    }
+
+    .skill-stack-body h3 {
+      margin-bottom: 7px;
+      font: 600 19px/1.25 'Space Grotesk', sans-serif;
+      color: var(--ivory);
+    }
+
+    .skill-stack-body p {
+      max-width: 52ch;
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.65;
+    }
+
+    .skill-chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 29px;
+      padding: 5px 9px;
+      border: 1px solid rgba(212,175,55,.18);
+      border-radius: 9px;
+      background: rgba(255,255,255,.025);
+      color: rgba(243,238,226,.88);
+      font: 500 10px/1.1 'Space Grotesk', sans-serif;
+      transition: all .25s ease;
+    }
+
+    .skill-chip:hover {
+      border-color: rgba(212,175,55,.42);
+      background: rgba(212,175,55,.07);
+      transform: translateY(-1px);
+    }
+
+    .skill-chip i {
+      color: var(--gold);
+      font-size: 10px;
+    }
+
+    .skill-chip b {
+      padding-left: 2px;
+      color: var(--gold-shine);
+      font-weight: 600;
+      font-size: 9px;
+    }
+
+    .skills-footer-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 15px;
+      padding: 12px 2px 0;
+      border-top: 1px solid rgba(212,175,55,.10);
+      color: rgba(173,165,147,.72);
+      font-size: 10px;
+    }
+
+    .skills-footer-line span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .skills-footer-line i {
+      color: var(--gold);
+      font-size: 9px;
+    }
+
+    .beyond-code-head {
+      margin-top: 28px !important;
+      padding-top: 20px !important;
+    }
+
+    @media (max-width: 760px) {
+      .skills-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+
+      .skills-heading-note {
+        font-size: 9.5px;
+      }
+
+      .skills-showcase {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .skill-stack-card {
+        padding: 19px 18px 17px;
+      }
+
+      .skill-stack-body h3 {
+        font-size: 17px;
+      }
+
+      .skills-footer-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .skill-chip {
+        font-size: 9.5px;
+      }
+    }
+
+
+/* =========================================================
+   SKILLS V4 — interactive focus cards / clearer hierarchy
+   ========================================================= */
+.skills-command-center{gap:18px;align-items:stretch}
+.skills-featured-card,.skills-group-card{cursor:pointer;transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease,background .32s ease}
+.skills-featured-card:hover,.skills-group-card:hover{transform:translateY(-4px);border-color:rgba(244,228,176,.38);box-shadow:0 20px 48px rgba(0,0,0,.30),0 0 26px rgba(212,175,55,.08),inset 0 1px 0 rgba(255,255,255,.05)}
+.skills-featured-card.is-active,.skills-group-card.is-active{border-color:rgba(244,228,176,.72);box-shadow:0 22px 55px rgba(0,0,0,.34),0 0 0 1px rgba(212,175,55,.12),0 0 34px rgba(212,175,55,.18),inset 0 1px 0 rgba(255,255,255,.09);background:linear-gradient(145deg,rgba(36,31,20,.98),rgba(12,11,9,.98))}
+.skills-featured-card.is-active::after,.skills-group-card.is-active::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none}
+.skills-featured-card.is-active::after{border:1px solid rgba(255,245,210,.16);box-shadow:inset 0 0 32px rgba(212,175,55,.055)}
+.skills-group-card.is-active::before{border:1px solid rgba(255,245,210,.10);box-shadow:inset 0 0 26px rgba(212,175,55,.045)}
+.skills-featured-card.is-active .skills-featured-icon,.skills-group-card.is-active .skills-group-head>i{filter:drop-shadow(0 0 10px rgba(244,228,176,.28))}
+.skills-group-card:focus-visible,.skills-featured-card:focus-visible{outline:2px solid rgba(244,228,176,.72);outline-offset:3px}
+.skills-group-head{margin-bottom:20px}
+.skills-group-head h3{font-size:16.5px}
+.skills-list{gap:15px}
+.skill-line{padding:5px 7px;border-radius:9px;transition:background .25s ease,transform .25s ease}
+.skill-line:hover{background:rgba(212,175,55,.055);transform:translateX(2px)}
+.skill-line span{font-size:11px;color:rgba(248,244,232,.88)}
+.skill-line b{font-size:11px;color:#f4e4b0}
+.skill-line>i{height:4px}
+.skills-meter-meta span{color:rgba(248,244,232,.72);font-size:10.5px}
+.skills-meter-meta strong{font-size:16px;color:#f4e4b0}
+.skills-bottom-strip{margin-top:16px;padding-top:12px}
+
+/* ===== Journey cleanup: fewer distractions, stronger timeline ===== */
+.career-section{min-height:0;padding:112px 0 100px;background:radial-gradient(circle at 50% 28%,rgba(212,175,55,.075),transparent 34%),linear-gradient(180deg,rgba(7,8,12,.99),rgba(10,10,14,.99))}
+.career-grid{opacity:.12;background-size:84px 84px}
+.career-glow{opacity:.065}
+.career-particles{opacity:.45}
+.career-tech-scene{opacity:.32;transform:scale(.92);transform-origin:center center}
+.journey-code{opacity:.48;box-shadow:none;background:rgba(12,12,17,.38)}
+.journey-laptop,.journey-phone,.code-orbit,.api-node,.innovation-node,.deployment-node{opacity:.38}
+.journey-stars{opacity:.32}
+.career-heading{max-width:980px;margin:0 auto 48px}
+.career-heading .section-label{margin-bottom:12px}
+.career-road{padding:4px 0}
+.road-line{background:linear-gradient(to bottom,transparent,rgba(212,175,55,.38) 8%,rgba(212,175,55,.13) 50%,rgba(212,175,55,.38) 92%,transparent);box-shadow:0 0 10px rgba(212,175,55,.07)}
+.career-item{margin-bottom:62px}
+.career-card{width:min(500px,100%);padding:22px 23px;border-radius:17px;background:linear-gradient(145deg,rgba(29,28,24,.96),rgba(16,16,17,.96));border-color:rgba(212,175,55,.18);box-shadow:0 16px 42px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.035);transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease,background .32s ease}
+.career-card:hover{transform:translateY(-5px);border-color:rgba(244,228,176,.42);box-shadow:0 22px 52px rgba(0,0,0,.32),0 0 24px rgba(212,175,55,.09)}
+.career-card h3{font-size:19px;line-height:1.3}
+.career-card h4{margin:6px 0 10px;font-size:12.5px;color:rgba(248,244,232,.70)}
+.career-card p{font-size:12.5px;line-height:1.7;color:rgba(248,244,232,.74)}
+.career-tags{gap:6px;margin-top:14px}
+.career-tags span{padding:5px 8px;font-size:8.5px;background:rgba(212,175,55,.055)}
+.career-card-icon{width:44px;height:44px;flex-basis:44px;border-radius:11px}
+.current-card{border-color:rgba(244,228,176,.40);box-shadow:0 18px 55px rgba(0,0,0,.30),0 0 28px rgba(212,175,55,.10)}
+@media(max-width:900px){.career-section{padding:95px 0 82px}.career-tech-scene{opacity:.18;transform:scale(.86)}.career-item{margin-bottom:52px}.career-card{padding:20px}.career-heading{margin-bottom:42px}}
+@media(max-width:600px){.career-section{padding:82px 0 70px}.career-card{padding:18px}.career-card p{font-size:12px}.career-item{margin-bottom:46px}}
+
+
+
+    /* ================= PROJECT SHOWCASE V2 ================= */
+    .projects-decor { display: none !important; }
+    #projects::after { opacity: .35; }
+
+    #projects {
+      padding-bottom: 76px;
+    }
+
+    #projects .title {
+      margin-bottom: 28px;
+    }
+
+    .project-showcase {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .project-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+      min-height: 430px;
+      border: 1px solid rgba(244, 228, 176, .17);
+      border-radius: 26px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 16% 20%, rgba(212,175,55,.11), transparent 32%),
+        linear-gradient(135deg, rgba(29,25,18,.98), rgba(12,10,8,.98));
+      box-shadow: 0 28px 70px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.045);
+      transition: border-color .35s ease, box-shadow .35s ease;
+    }
+
+    .project-feature:hover {
+      border-color: rgba(244,228,176,.28);
+      box-shadow: 0 34px 84px rgba(0,0,0,.48), 0 0 36px rgba(212,175,55,.055), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .project-feature-media {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(212,175,55,.16), transparent 42%),
+        linear-gradient(145deg, rgba(212,175,55,.06), rgba(7,6,5,.35));
+      border-right: 1px solid rgba(244,228,176,.10);
+    }
+
+    .project-feature-media::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      border: 1px solid rgba(244,228,176,.10);
+      box-shadow: 0 0 0 55px rgba(212,175,55,.018), 0 0 0 110px rgba(212,175,55,.012);
+      animation: featureRing 12s linear infinite;
+    }
+
+    @keyframes featureRing { to { transform: rotate(360deg); } }
+
+    .project-feature-glow {
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background: rgba(212,175,55,.15);
+      filter: blur(60px);
+      opacity: .7;
+    }
+
+    .project-feature-frame {
+      position: relative;
+      z-index: 2;
+      width: min(330px, 78%);
+      height: 330px;
+      border-radius: 20px;
+      padding: 10px;
+      background: linear-gradient(145deg, rgba(244,228,176,.22), rgba(212,175,55,.06));
+      border: 1px solid rgba(244,228,176,.28);
+      box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 32px rgba(212,175,55,.10);
+      transition: transform .45s ease, opacity .25s ease;
+    }
+
+    .project-feature-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 13px;
+      background: #0c0a07;
+      transition: opacity .25s ease, transform .45s ease;
+    }
+
+    .project-feature-frame.is-changing { opacity: .15; transform: scale(.975); }
+
+    .project-feature-index {
+      position: absolute;
+      left: 28px;
+      bottom: 24px;
+      z-index: 4;
+      font: 700 11px 'Space Grotesk', sans-serif;
+      letter-spacing: 2px;
+      color: var(--gold-shine);
+      padding: 8px 11px;
+      border: 1px solid rgba(212,175,55,.22);
+      background: rgba(10,9,8,.72);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+
+    .project-feature-info {
+      padding: 48px 48px 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-feature-topline {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--gold-shine);
+      font: 700 10px 'Space Grotesk', sans-serif;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .project-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212,175,55,.8);
+      flex: 0 0 auto;
+    }
+
+    .project-feature-status {
+      margin-left: auto;
+      color: rgba(243,238,226,.42);
+      letter-spacing: 1px;
+      font-size: 9px;
+    }
+
+    .project-feature-info h3 {
+      font: 700 clamp(34px, 4vw, 52px)/1.02 'Space Grotesk', sans-serif;
+      letter-spacing: -.8px;
+      color: #fffaf0;
+      margin-bottom: 17px;
+    }
+
+    .project-feature-info > p {
+      max-width: 48ch;
+      color: rgba(238,234,223,.73);
+      font-size: 14px;
+      line-height: 1.85;
+      margin-bottom: 22px;
+    }
+
+    .project-feature-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-feature-tech span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #f0dfa9;
+      border: 1px solid rgba(212,175,55,.25);
+      background: rgba(212,175,55,.055);
+      font: 600 10px 'Space Grotesk', sans-serif;
+    }
+
+    .project-feature-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(244,228,176,.10);
+      color: rgba(243,238,226,.42);
+      font-size: 11px;
+    }
+
+    .project-note-icon {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(212,175,55,.25);
+      border-radius: 9px;
+      color: var(--gold);
+      background: rgba(212,175,55,.05);
+    }
+
+    .project-rail-wrap {
+      margin-top: 16px;
+    }
+
+    .project-rail-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4px 9px;
+      color: rgba(243,238,226,.40);
+      font: 600 9px 'Space Grotesk', sans-serif;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .project-rail {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(112px, 1fr));
+      gap: 8px;
+    }
+
+    .project-rail-card {
+      appearance: none;
+      border: 1px solid rgba(244,228,176,.11);
+      background: rgba(18,15,10,.72);
+      color: var(--ivory);
+      border-radius: 13px;
+      padding: 11px 10px;
+      min-width: 0;
+      cursor: pointer;
+      text-align: left;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 7px;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .project-rail-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(244,228,176,.30);
+      background: rgba(30,25,17,.92);
+    }
+
+    .project-rail-card.is-active {
+      border-color: rgba(212,175,55,.78);
+      background: linear-gradient(135deg, rgba(212,175,55,.13), rgba(20,17,12,.94));
+      box-shadow: 0 0 20px rgba(212,175,55,.10), inset 0 0 18px rgba(212,175,55,.035);
+    }
+
+    .project-rail-card:focus-visible {
+      outline: 2px solid var(--gold-shine);
+      outline-offset: 2px;
+    }
+
+    .rail-number {
+      color: rgba(244,228,176,.42);
+      font: 700 9px 'Space Grotesk', sans-serif;
+    }
+
+    .is-active .rail-number { color: var(--gold); }
+
+    .rail-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: rgba(243,238,226,.78);
+      font: 600 10px 'Space Grotesk', sans-serif;
+    }
+
+    .is-active .rail-name { color: #fff5d8; }
+
+    .rail-arrow {
+      color: rgba(212,175,55,.42);
+      font-size: 12px;
+      transition: transform .25s ease, color .25s ease;
+    }
+
+    .is-active .rail-arrow { color: var(--gold); transform: translate(1px,-1px); }
+
+    @media(max-width:1000px) {
+      .project-feature { grid-template-columns: 1fr; }
+      .project-feature-media { min-height: 360px; border-right: 0; border-bottom: 1px solid rgba(244,228,176,.10); }
+      .project-feature-frame { height: 300px; }
+      .project-feature-info { padding: 34px; }
+      .project-rail { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    }
+
+    @media(max-width:650px) {
+      #projects { padding-bottom: 55px; }
+      .project-feature { border-radius: 20px; }
+      .project-feature-media { min-height: 290px; padding: 22px; }
+      .project-feature-frame { width: min(260px, 82%); height: 250px; }
+      .project-feature-index { left: 18px; bottom: 16px; }
+      .project-feature-info { padding: 27px 22px 24px; }
+      .project-feature-info h3 { font-size: 35px; }
+      .project-feature-status { display:none; }
+      .project-rail { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom: 5px; scrollbar-width: thin; }
+      .project-rail-card { flex: 0 0 145px; scroll-snap-align:start; }
+    }
+
+    /* ================= PROJECT SHOWCASE V3 — IMAGE FIRST ================= */
+    #projects {
+      padding-bottom: 62px;
+    }
+
+    #projects .title {
+      margin-bottom: 24px;
+    }
+
+    .project-showcase {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .project-feature {
+      grid-template-columns: minmax(0, 1.45fr) minmax(300px, .62fr);
+      min-height: 392px;
+      border-radius: 22px;
+      border-color: rgba(244,228,176,.15);
+      background:
+        linear-gradient(115deg, rgba(26,22,15,.98) 0%, rgba(14,12,9,.98) 64%, rgba(10,9,7,.99) 100%);
+      box-shadow: 0 22px 55px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.045);
+    }
+
+    .project-feature:hover {
+      border-color: rgba(212,175,55,.30);
+      box-shadow: 0 28px 65px rgba(0,0,0,.42), 0 0 30px rgba(212,175,55,.045), inset 0 1px 0 rgba(255,255,255,.055);
+    }
+
+    .project-feature-media {
+      min-height: 392px;
+      padding: 20px 28px;
+      border-right: 1px solid rgba(244,228,176,.08);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(212,175,55,.14), transparent 48%),
+        linear-gradient(145deg, rgba(212,175,55,.055), rgba(5,5,4,.20));
+    }
+
+    .project-feature-media::before {
+      width: 330px;
+      height: 330px;
+      opacity: .55;
+      animation-duration: 18s;
+    }
+
+    .project-feature-glow {
+      width: 310px;
+      height: 310px;
+      filter: blur(70px);
+      opacity: .52;
+    }
+
+    .project-feature-frame {
+      width: min(450px, 92%);
+      height: 350px;
+      padding: 8px;
+      border-radius: 18px;
+      border-color: rgba(244,228,176,.24);
+      background: linear-gradient(145deg, rgba(244,228,176,.17), rgba(212,175,55,.035));
+      box-shadow: 0 20px 48px rgba(0,0,0,.52), 0 0 28px rgba(212,175,55,.08);
+    }
+
+    .project-feature-frame img {
+      border-radius: 12px;
+      background: #080705;
+    }
+
+    .project-feature-index {
+      left: 26px;
+      bottom: 20px;
+      padding: 7px 10px;
+      font-size: 10px;
+      background: rgba(7,6,5,.78);
+    }
+
+    .project-feature-info {
+      padding: 34px 30px 28px;
+      justify-content: center;
+    }
+
+    .project-feature-topline {
+      gap: 8px;
+      margin-bottom: 13px;
+      font-size: 9px;
+      letter-spacing: 1.45px;
+    }
+
+    .project-feature-status {
+      font-size: 8px;
+      opacity: .75;
+    }
+
+    .project-feature-info h3 {
+      font-size: clamp(31px, 3.4vw, 44px);
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .project-feature-info > p {
+      max-width: 42ch;
+      font-size: 13px;
+      line-height: 1.68;
+      margin-bottom: 17px;
+    }
+
+    .project-feature-tech {
+      gap: 6px;
+    }
+
+    .project-feature-tech span {
+      padding: 6px 9px;
+      font-size: 9px;
+    }
+
+    /* The instruction is useful but was making the feature feel taller. */
+    .project-feature-note {
+      margin-top: 17px;
+      padding-top: 13px;
+      font-size: 10px;
+    }
+
+    .project-note-icon {
+      width: 25px;
+      height: 25px;
+      border-radius: 8px;
+    }
+
+    .project-rail-wrap {
+      margin-top: 13px;
+    }
+
+    .project-rail-label {
+      padding: 0 3px 7px;
+      font-size: 8px;
+      letter-spacing: 1.45px;
+    }
+
+    .project-rail {
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .project-rail-card {
+      border-radius: 10px;
+      padding: 9px 8px;
+      gap: 5px;
+      min-height: 38px;
+      background: rgba(14,12,9,.70);
+    }
+
+    .project-rail-card:hover {
+      transform: translateY(-1px);
+    }
+
+    .rail-number {
+      font-size: 8px;
+    }
+
+    .rail-name {
+      font-size: 9px;
+    }
+
+    .rail-arrow {
+      font-size: 10px;
+    }
+
+    .project-rail-card.is-active {
+      border-color: rgba(212,175,55,.88);
+      box-shadow: 0 0 18px rgba(212,175,55,.12), inset 0 0 14px rgba(212,175,55,.045);
+    }
+
+    @media(max-width:1000px) {
+      .project-feature {
+        grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+        min-height: 370px;
+      }
+      .project-feature-media { min-height: 370px; padding: 18px; }
+      .project-feature-frame { width: min(390px, 94%); height: 330px; }
+      .project-feature-info { padding: 28px 24px; }
+      .project-rail { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    }
+
+    @media(max-width:760px) {
+      .project-feature { grid-template-columns: 1fr; min-height: 0; }
+      .project-feature-media { min-height: 350px; border-right: 0; border-bottom: 1px solid rgba(244,228,176,.08); }
+      .project-feature-frame { width: min(430px, 92%); height: 330px; }
+      .project-feature-info { padding: 25px 22px 23px; }
+      .project-feature-info h3 { font-size: 34px; }
+    }
+
+    @media(max-width:650px) {
+      #projects { padding-bottom: 52px; }
+      .project-feature { border-radius: 18px; }
+      .project-feature-media { min-height: 300px; padding: 16px; }
+      .project-feature-frame { width: min(330px, 92%); height: 270px; }
+      .project-feature-index { left: 15px; bottom: 14px; }
+      .project-feature-status { display:none; }
+      .project-feature-info { padding: 23px 18px 21px; }
+      .project-feature-info h3 { font-size: 32px; }
+      .project-feature-note { display:none; }
+      .project-rail { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom: 4px; scrollbar-width: thin; }
+      .project-rail-card { flex: 0 0 142px; scroll-snap-align:start; }
+    }
+
   </style>
   <section id="testimonials" class="testimonials-section">
     <div class="testimonial-star-field" aria-hidden="true">
@@ -10095,41 +11464,34 @@
           <div class="testimonial-track" id="testimonialTrack">
             <article class="testimonial-card">
               <div class="inner">
-
-                <p class="testimonial-quote">Ali is the kind of developer who turns complex ideas into clean, practical
-                  products.</p>
-                <div class="testimonial-person">
-                  <div class="testimonial-avatar">A</div>
-                  <div>
-                    <div class="testimonial-name">Ahmed</div>
-                    <div class="testimonial-role">Product Collaborator</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <div class="inner">
-
-                <p class="testimonial-quote">His attention to detail and premium UI thinking made the final product feel
-                  genuinely polished.</p>
+                <p class="testimonial-quote">Ali is a talented mobile developer who understands problems quickly and turns them into practical solutions. He pays attention to detail and always looks for ways to improve the product.</p>
                 <div class="testimonial-person">
                   <div class="testimonial-avatar">S</div>
                   <div>
-                    <div class="testimonial-name">Sarah</div>
-                    <div class="testimonial-role">Project Partner</div>
+                    <div class="testimonial-name">Sufyan Ahmed</div>
+                    <div class="testimonial-role">CEO, InventStarts</div>
                   </div>
                 </div>
               </div>
             </article>
+
             <article class="testimonial-card">
               <div class="inner">
+                <p class="testimonial-quote">Ali understands requirements well and turns them into smooth, user-friendly mobile experiences. He communicates clearly, handles API work well, and always looks for a better solution.</p>
+                <div class="testimonial-person">
+                  <div class="testimonial-avatar">N</div>
+                  <div>
+                    <div class="testimonial-name">Noor Zainab</div>
+                    <div class="testimonial-role">Backend Developer, InventStarts</div>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-                <p class="testimonial-quote">One of my favorite teacher and an amazing mentor. ❤️ They explain things
-                  clearly and always guide me whenever I ask. I’ve learned so much from them and they’ve played a big
-                  role in my growth. Truly grateful! 💙
-
-
-                </p>
+            <article class="testimonial-card">
+              <div class="inner">
+                <p class="testimonial-quote">One of my favorite teacher and an amazing mentor.He explains things clearly and always guides me whenever I ask. I’ve learned so much from him and he’s played
+                   a big role in my growth. Truly grateful!</p>
                 <div class="testimonial-person">
                   <div class="testimonial-avatar">S</div>
                   <div>
@@ -10139,48 +11501,46 @@
                 </div>
               </div>
             </article>
+
             <article class="testimonial-card">
               <div class="inner">
-
-                <p class="testimonial-quote">Reliable execution, thoughtful decisions, and a product that felt ready for
-                  real users.</p>
+                <p class="testimonial-quote">Ali is easy to work with and quick to understand technical requirements. He communicates clearly, handles mobile challenges well, and focuses on delivering reliable, polished products.</p>
                 <div class="testimonial-person">
-                  <div class="testimonial-avatar">D</div>
+                  <div class="testimonial-avatar">F</div>
                   <div>
-                    <div class="testimonial-name">Daniel</div>
-                    <div class="testimonial-role">Startup Founder</div>
+                    <div class="testimonial-name">Fiza Rouf</div>
+                    <div class="testimonial-role">Full Stack Developer, InventStarts</div>
                   </div>
                 </div>
               </div>
             </article>
+
             <article class="testimonial-card">
               <div class="inner">
-
-                <p class="testimonial-quote">The development process stayed clear and organized from the first idea
-                  through the final release.</p>
+                <p class="testimonial-quote">Ali brings a strong problem-solving mindset to his work. He understands requirements quickly, adapts to challenges, and focuses on solutions that work well for the end user.</p>
                 <div class="testimonial-person">
-                  <div class="testimonial-avatar">R</div>
+                  <div class="testimonial-avatar">A</div>
                   <div>
-                    <div class="testimonial-name">Ryan</div>
-                    <div class="testimonial-role">Business Partner</div>
+                    <div class="testimonial-name">Ashar Khalid</div>
+                    <div class="testimonial-role">AI-Augmented Full Stack Developer, InventStarts</div>
                   </div>
                 </div>
               </div>
             </article>
+
             <article class="testimonial-card">
               <div class="inner">
-
-                <p class="testimonial-quote">A strong technical mindset with a genuine focus on quality, usability, and
-                  long-term product growth.</p>
+                <p class="testimonial-quote">Ali is a reliable mobile developer who understands how product parts work together. He communicates well, takes feedback positively, and takes ownership to get things done.</p>
                 <div class="testimonial-person">
-                  <div class="testimonial-avatar">E</div>
+                  <div class="testimonial-avatar">S</div>
                   <div>
-                    <div class="testimonial-name">Emma</div>
-                    <div class="testimonial-role">Product Partner</div>
+                    <div class="testimonial-name">Shaharyar</div>
+                    <div class="testimonial-role">Senior Angular Developer, InventStarts</div>
                   </div>
                 </div>
               </div>
             </article>
+
           </div>
         </div>
       </div>
@@ -10350,20 +11710,40 @@
             </h2>
           </div>
 
-          <div class="ar-features">
+          <div class="ar-features" aria-label="Core tools and technologies">
             <div class="ar-pill">
-              <i class="fas fa-fire"></i>
+              <i class="fas fa-fire" aria-hidden="true"></i>
               <span>Firebase</span>
             </div>
 
             <div class="ar-pill">
-              <i class="fab fa-figma"></i>
+              <i class="fab fa-figma" aria-hidden="true"></i>
               <span>UI/UX</span>
             </div>
 
             <div class="ar-pill">
-              <i class="fas fa-code"></i>
+              <i class="fas fa-code" aria-hidden="true"></i>
               <span>VS Code</span>
+            </div>
+
+            <div class="ar-pill">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <span>GitHub</span>
+            </div>
+
+            <div class="ar-pill">
+              <i class="fab fa-react" aria-hidden="true"></i>
+              <span>React Native</span>
+            </div>
+
+            <div class="ar-pill">
+              <i class="fab fa-google-play" aria-hidden="true"></i>
+              <span>Play Store</span>
+            </div>
+
+            <div class="ar-pill">
+              <i class="fab fa-app-store-ios" aria-hidden="true"></i>
+              <span>App Store</span>
             </div>
           </div>
         </div>
@@ -10394,14 +11774,6 @@
 
       </div>
 
-      <!-- BOTTOM COPYRIGHT -->
-      <div class="ar-bottom">
-        <div class="ar-copy">
-          <span>© 2026 Ali Raza</span>
-          <span class="dot">•</span>
-          <span>Built with <i class="fas fa-heart"></i> and code.</span>
-        </div>
-      </div>
     </div>
   </footer>
 
@@ -11514,6 +12886,143 @@
 
   </script>
 
-</body>
+<script>
+/* ===== Skills V4: click/focus glow ===== */
+(function(){
+  const cards=[...document.querySelectorAll('.skills-featured-card, .skills-group-card')];
+  if(!cards.length) return;
+  cards.forEach(card=>{
+    card.setAttribute('tabindex','0');
+    card.setAttribute('role','button');
+    card.addEventListener('click',()=>{
+      cards.forEach(c=>c.classList.remove('is-active'));
+      card.classList.add('is-active');
+    });
+    card.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}
+    });
+  });
+  cards[0].classList.add('is-active');
+})();
+</script>
 
-</html>
+<script>
+/* ===== Projects Carousel — 3 visible, arrows + 20s auto ===== */
+(function () {
+  const data = [
+    { image:'images/orchid.png', title:'Orchid', type:'iOS & Android', desc:'Evidence-based reproductive health app with goal tracking, reminders, and structured health planning.', tech:['React Native','Health APIs'] },
+    { image:'images/lorry.png', title:'Lorry Loader', type:'iOS & Android', desc:'Crane safety inspection app with checklist workflows, photo evidence capture, and automated PDF reporting.', tech:['React Native','PDF Reports'] },
+    { image:'images/smartfarmer.png', title:'Smart Farmer', type:'iOS & Android', desc:'Farm safety and compliance management app with digital inspections, machinery tracking, and real-time reporting.', tech:['React Native','Native UI'] },
+    { image:'images/Reliance.png', title:'Reliance Protect', type:'iOS & Android', desc:'Lone worker safety system with SOS alerts, fall detection, GPS tracking, and real-time emergency escalation.', tech:['React Native','Native Fall Detection'] },
+    { image:'images/flareeducation.png', title:'FlareEducation', type:'iOS & Android', desc:'Multi-role learning & session tracking app connecting tutors, students, and guardians with live location.', tech:['React Native','Google Maps SDK'] },
+    { image:'images/BioRisk.png', title:'BioRisk', type:'iOS & Android', desc:'Offline-first property inspection app with rebuilt sync architecture, signature capture, and guided flows.', tech:['React Native','Offline Sync'] },
+    { image:'images/ppr.png', title:'PPR', type:'iOS & Android', desc:'Healthcare shift booking app enabling professionals to view, apply for, and manage local shifts in real time.', tech:['React Native','Real-Time Booking'] },
+    { image:'images/communitus.png', title:'Communit-us', type:'iOS & Android', desc:'The Communit-Us Mobile App enables members of member-led organisations to collaborate, connect, and share meaningful insights.', tech:['React Native','Community Engagement'] },
+    { image:'images/ppr.png', title:'Funutrition', type:'iOS & Android', desc:'Playful nutrition tracking app helping users build healthy eating habits through interactive, gamified goals.', tech:['React Native','Health & Nutrition'] }
+  ];
+
+  const root = document.getElementById('projectsCarousel');
+  const track = document.getElementById('projectsTrack');
+  const prev = document.getElementById('projectsPrev');
+  const next = document.getElementById('projectsNext');
+  const page = document.getElementById('projectsPage');
+  if (!root || !track) return;
+
+  let start = 0;
+  let active = 0;
+  let timer = null;
+
+  function visibleCount() {
+    if (window.innerWidth <= 650) return 1;
+    if (window.innerWidth <= 1000) return 2;
+    return 3;
+  }
+
+  function maxStart() {
+    return Math.max(0, data.length - visibleCount());
+  }
+
+  function render() {
+    track.innerHTML = data.map((item, i) => `
+      <article class="project-mini-card ${i === active ? 'is-active' : ''}" data-project-index="${i}" tabindex="0" role="button" aria-label="View ${item.title}">
+        <div class="project-mini-image">
+          <img src="${item.image}" alt="${item.title} app preview" loading="lazy">
+          <span class="project-mini-number">${String(i+1).padStart(2,'0')} / ${String(data.length).padStart(2,'0')}</span>
+        </div>
+        <div class="project-mini-content">
+          <div class="project-mini-top">
+            <span class="project-mini-type">${item.type}</span>
+            <span class="project-mini-arrow">↗</span>
+          </div>
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+          <div class="project-mini-tech">${item.tech.map(t => `<span>${t}</span>`).join('')}</div>
+        </div>
+      </article>
+    `).join('');
+
+    track.querySelectorAll('.project-mini-card').forEach(card => {
+      const i = Number(card.dataset.projectIndex);
+      card.addEventListener('click', () => select(i, true));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(i, true); }
+      });
+    });
+
+    updatePosition(false);
+  }
+
+  function updatePosition(animate = true) {
+    const cards = track.querySelectorAll('.project-mini-card');
+    if (!cards.length) return;
+    const gap = 16;
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    track.style.transitionDuration = animate ? '.7s' : '0s';
+    track.style.transform = `translateX(-${start * (cardWidth + gap)}px)`;
+
+    const shown = visibleCount();
+    const end = Math.min(data.length, start + shown);
+    page.textContent = `${String(start+1).padStart(2,'0')} — ${String(end).padStart(2,'0')}`;
+  }
+
+  function select(i, userAction = false) {
+    active = i;
+    const shown = visibleCount();
+    if (i < start) start = i;
+    if (i >= start + shown) start = Math.min(i - shown + 1, maxStart());
+    track.querySelectorAll('.project-mini-card').forEach((card, n) => card.classList.toggle('is-active', n === active));
+    updatePosition(true);
+    if (userAction) restart();
+  }
+
+  function move(dir) {
+    const max = maxStart();
+    if (dir > 0) {
+      start = start < max ? start + 1 : 0;
+    } else {
+      start = start > 0 ? start - 1 : max;
+    }
+    active = start;
+    track.querySelectorAll('.project-mini-card').forEach((card, n) => card.classList.toggle('is-active', n === active));
+    updatePosition(true);
+    restart();
+  }
+
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => move(1), 20000);
+  }
+
+  prev.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  root.addEventListener('mouseenter', () => clearInterval(timer));
+  root.addEventListener('mouseleave', restart);
+  window.addEventListener('resize', () => {
+    start = Math.min(start, maxStart());
+    updatePosition(false);
+  });
+
+  render();
+  restart();
+})();
+</script>
